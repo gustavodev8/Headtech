@@ -696,18 +696,290 @@ filter: drop-shadow(0 6px 60px rgba(0, 212, 255, 0.5));
         .map-container { border-radius: 12px; overflow: hidden; height: 300px; margin-bottom: 20px; border: 1px solid var(--border); }
         .location-modal .modal-content { max-width: 700px; }
 
-        @media (max-width: 640px) {
-            body { padding: 20px 16px; }
-            .logo { width: 240px; }
-            .link-btn { padding: 16px 18px; }
-            .modal-content { padding: 24px; }
-            .checkbox-group { grid-template-columns: 1fr; }
-        }
+/* ============================================
+   RESPONSIVIDADE COMPLETA
+   ============================================ */
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.5); }
-        ::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.4); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 212, 255, 0.6); }
+/* Smartphones pequenos (até 375px) */
+@media (max-width: 375px) {
+    body { 
+        padding: 16px 12px; 
+    }
+    
+    .container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .logo { 
+        width: 200px; 
+    }
+    
+    .logo-container::before {
+        width: 160%;
+        height: 130%;
+    }
+    
+    .tagline { 
+        font-size: 13px; 
+        margin-bottom: 12px;
+    }
+    
+    .badge { 
+        font-size: 11px; 
+        padding: 6px 12px; 
+    }
+    
+    .link-btn { 
+        padding: 14px 16px; 
+        border-radius: 12px;
+    }
+    
+    .link-title { 
+        font-size: 14px; 
+    }
+    
+    .link-description { 
+        font-size: 12px; 
+    }
+    
+    .link-icon { 
+        width: 20px; 
+        height: 20px; 
+    }
+    
+    .social-btn { 
+        width: 40px; 
+        height: 40px; 
+    }
+    
+    .social-btn svg { 
+        width: 18px; 
+        height: 18px; 
+    }
+    
+    .footer-text { 
+        font-size: 12px; 
+    }
+    
+    .powered { 
+        font-size: 10px; 
+    }
+    
+    .modal-content { 
+        padding: 20px; 
+        max-width: 95%;
+    }
+    
+    .modal-title { 
+        font-size: 18px; 
+    }
+    
+    .form-label { 
+        font-size: 13px; 
+    }
+    
+    .form-input, .form-select, .form-textarea { 
+        font-size: 13px; 
+        padding: 10px 12px; 
+    }
+    
+    .checkbox-label { 
+        font-size: 12px; 
+        padding: 8px 10px; 
+    }
+    
+    .submit-btn { 
+        font-size: 14px; 
+        padding: 12px; 
+    }
+    
+    .checkbox-group { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* Smartphones médios (376px a 640px) */
+@media (min-width: 376px) and (max-width: 640px) {
+    body { 
+        padding: 20px 16px; 
+    }
+    
+    .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .logo { 
+        width: 240px; 
+    }
+    
+    .logo-container::before {
+        width: 170%;
+        height: 140%;
+    }
+    
+    .link-btn { 
+        padding: 16px 18px; 
+    }
+    
+    .modal-content { 
+        padding: 24px; 
+        max-width: 90%;
+    }
+    
+    .checkbox-group { 
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* Tablets portrait (641px a 768px) */
+@media (min-width: 641px) and (max-width: 768px) {
+    .container {
+        max-width: 520px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .logo { 
+        width: 300px; 
+    }
+    
+    .tagline { 
+        font-size: 16px; 
+    }
+    
+    .link-btn { 
+        padding: 20px 22px; 
+    }
+    
+    .link-title { 
+        font-size: 16px; 
+    }
+    
+    .modal-content { 
+        max-width: 85%;
+        padding: 28px;
+    }
+    
+    .checkbox-group { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* Tablets landscape (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .logo { 
+        width: 320px; 
+    }
+    
+    .link-btn { 
+        padding: 20px 24px; 
+    }
+    
+    .modal-content { 
+        max-width: 600px;
+        padding: 32px;
+    }
+    
+    .checkbox-group { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .location-modal .modal-content { 
+        max-width: 750px; 
+    }
+}
+
+/* Desktop pequeno (1025px a 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        max-width: 500px;
+    }
+    
+    .modal-content {
+        max-width: 520px;
+    }
+}
+
+/* Ajustes para orientação landscape em smartphones */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 20px 16px;
+    }
+    
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .header {
+        margin-bottom: 24px;
+    }
+    
+    .logo {
+        width: 180px;
+    }
+    
+    .logo-container {
+        margin-bottom: 16px;
+    }
+    
+    .tagline {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+    
+    .badge {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+    
+    .links {
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+    
+    .link-btn {
+        padding: 12px 16px;
+    }
+    
+    .social {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .footer {
+        padding-top: 20px;
+    }
+    
+    .modal-content {
+        max-height: 85vh;
+        padding: 20px;
+    }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar { 
+    width: 6px; 
+}
+
+::-webkit-scrollbar-track { 
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+::-webkit-scrollbar-thumb { 
+    background: rgba(0, 212, 255, 0.4); 
+    border-radius: 3px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: rgba(0, 212, 255, 0.6); 
+}
     </style>
 </head>
 <body>
